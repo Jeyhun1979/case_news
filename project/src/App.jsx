@@ -4,9 +4,11 @@ import HomePage from './pages/HomePage'
 import StoryPage from './pages/StoryPage'
 import './App.css'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename || undefined}>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
